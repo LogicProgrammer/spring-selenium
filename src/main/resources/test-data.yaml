@@ -1,0 +1,10 @@
+test_data_sheet:
+
+graph:
+  client_id: ZWZiMDA1MDEtODgxZC00MGMyLWE3MGUtOTRiMGU4OGQ2NmE1
+  tenant_id: NDkyZGU1NjMtN2QwNS00MDY4LWEwNmUtNmVhMDVmZGVmZTBi
+  client_secret: VkpYQX5FUi5HVmp4VmR+LTNNX09kfnE1MjdINXJBOGxmdw==
+  user_id: MWNmMTg1MDItMzBlMi00ODk2LWFmYzgtYzFkN2E2MjIwOThl
+
+google_sheets:
+  client_secret: 168147731028-d03ecoa7see3p6bust19kb75th4pr61h.apps.googleusercontent.com

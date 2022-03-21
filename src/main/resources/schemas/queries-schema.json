@@ -1,0 +1,146 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/Queries",
+  "definitions": {
+    "Queries": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "queries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Query"
+          }
+        }
+      },
+      "required": [
+        "queries"
+      ],
+      "title": "Queries"
+    },
+    "Query": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "file": {
+          "type": "string"
+        },
+        "table": {
+          "$ref": "#/definitions/Table"
+        },
+        "database": {
+          "$ref": "#/definitions/Database"
+        },
+        "orientation": {
+          "type": "string"
+        },
+        "fetch": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          }
+        },
+        "range": {
+          "$ref": "#/definitions/Range"
+        }
+      },
+      "required": [
+        "name",
+        "type"
+      ],
+      "title": "Query"
+    },
+    "Database": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "server": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "credentials": {
+          "$ref": "#/definitions/Credentials"
+        },
+        "query": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "credentials",
+        "name",
+        "server",
+        "type",
+        "query"
+      ],
+      "title": "Database"
+    },
+    "Credentials": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "password",
+        "username"
+      ],
+      "title": "Credentials"
+    },
+    "Range": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "type": "integer"
+        },
+        "end": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "end",
+        "start"
+      ],
+      "title": "Range"
+    },
+    "Table": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "sheet": {
+          "type": "string"
+        },
+        "table_name": {
+          "type": "string"
+        },
+        "key": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "sheet",
+        "table_name"
+      ],
+      "title": "Table"
+    }
+  }
+}

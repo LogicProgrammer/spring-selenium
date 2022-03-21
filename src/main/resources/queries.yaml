@@ -1,0 +1,36 @@
+queries:
+
+  - name: persons
+    type: raw-table
+    file: src/test/resources/data/tables.xlsx
+    table:
+      sheet: Sheet1
+      table_name: persons table
+    orientation: horizontal
+    fetch: [1,2,3]
+    range:
+      start: 1
+      end: 10
+
+  - name: addresses
+    type: table
+    file: src/test/resources/data/addresses.csv
+    fetch: [1]
+    orientation: vertical
+
+
+  - name: example data
+    type: database
+    database:
+      name: example database
+      server: localhost
+      type: mysql
+      query: '''
+        something
+        is here
+      '''
+      credentials:
+        username: su
+        password: gw
+
+

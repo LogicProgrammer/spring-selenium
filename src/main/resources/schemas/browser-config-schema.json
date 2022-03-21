@@ -1,0 +1,227 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "$ref": "#/definitions/BrowserTemplate",
+  "definitions": {
+    "BrowserTemplate": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "templates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Template"
+          }
+        }
+      },
+      "required": [
+        "templates"
+      ],
+      "title": "BrowserTemplate"
+    },
+    "Template": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "browser_name": {
+          "type": "string"
+        },
+        "remote_browser": {
+          "type": "string"
+        },
+        "ip": {
+          "type": "string"
+        },
+        "port": {
+          "type": "number"
+        },
+        "driver": {
+          "type": "string"
+        },
+        "options": {
+          "$ref": "#/definitions/Options"
+        },
+        "proxy": {
+          "$ref": "#/definitions/Proxy"
+        },
+        "geolocation": {
+          "$ref": "#/definitions/Geolocation"
+        },
+        "capture_network_logs": {
+          "type": "boolean"
+        },
+        "capture_console_logs": {
+          "type": "boolean"
+        },
+        "capture_js_exceptions": {
+          "type": "boolean"
+        },
+        "capture_performance_metrics": {
+          "type": "boolean"
+        },
+        "authentication": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Authentication"
+          }
+        },
+        "mobile_emulation": {
+          "$ref": "#/definitions/MobileEmulation"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "title": "Template"
+    },
+    "Authentication": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "password",
+        "url",
+        "username"
+      ],
+      "title": "Authentication"
+    },
+    "Geolocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "longitude": {
+          "type": "number"
+        },
+        "latitude": {
+          "type": "number"
+        },
+        "accuracy": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "accuracy",
+        "latitude",
+        "longitude"
+      ],
+      "title": "Geolocation"
+    },
+    "MobileEmulation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "width": {
+          "type": "string"
+        },
+        "height": {
+          "type": "string"
+        },
+        "pixel_ratio": {
+          "type": "string"
+        },
+        "device_name": {
+          "type": "string"
+        }
+      },
+      "required": [
+      ],
+      "title": "MobileEmulation"
+    },
+    "Options": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "headless": {
+          "type": "boolean"
+        },
+        "binary": {
+          "type": "string"
+        },
+        "unhandled_prompt_behaviour": {
+          "type": "string"
+        },
+        "experimental_options": {
+          "$ref": "#/definitions/ExperimentalOptions"
+        },
+        "arguments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "accept_insecure_certs": {
+          "type": "boolean"
+        },
+        "exclude_switches": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "include_switches": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+      ],
+      "title": "Options"
+    },
+    "ExperimentalOptions": {
+      "type": "object",
+      "additionalProperties": true,
+      "title": "ExperimentalOptions"
+    },
+    "Proxy": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "type": "string"
+        },
+        "pac": {
+          "type": "string"
+        },
+        "ftp": {
+          "type": "string"
+        },
+        "http": {
+          "type": "string"
+        },
+        "ssl": {
+          "type": "string"
+        },
+        "socks_version": {
+          "type": "integer"
+        },
+        "socks_proxy": {
+          "type": "string"
+        },
+        "socks_username": {
+          "type": "string"
+        },
+        "socks_password": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "type"
+      ],
+      "title": "Proxy"
+    }
+  }
+}
